@@ -34,11 +34,13 @@ def submit():
     pdf = PDF()
     pdf.add_page()
     
-    pdf.add_section('1 - Identificação da Unidade Consumidora - UC', f"Titular da UC: {form_data['titular']}\n"
-                                                                   f"Rua/Av.: {form_data['rua']} No.: {form_data['numero']} CEP: {form_data['cep']}\n"
-                                                                   f"Bairro: {form_data['bairro']} Cidade: {form_data['cidade']}\n"
-                                                                   f"E-mail: {form_data['email']} Telefone: {form_data['telefone']} Celular: {form_data['celular']}\n"
-                                                                   f"CNPJ/CPF: {form_data['cnpj_cpf']}")
+    pdf.add_section(
+        '1 - Identificação da Unidade Consumidora - UC', f"Titular da UC: {form_data['titular']}\n"
+         f"Rua/Av.: {form_data['rua']} No.: {form_data['numero']} CEP: {form_data['cep']}\n"
+         f"Bairro: {form_data['bairro']} Cidade: {form_data['cidade']}\n"
+         f"E-mail: {form_data['email']} Telefone: {form_data['telefone']} Celular: {form_data['celular']}\n"
+         f"CNPJ/CPF: {form_data['cnpj_cpf']}"
+         )
     # Add other sections similarly
 
     pdf_output = pdf.output(dest='S').encode('latin1')
@@ -46,6 +48,7 @@ def submit():
     buffer.seek(0)
     
     return send_file(buffer, as_attachment=True, download_name='form.pdf', mimetype='application/pdf')
+
 
 if __name__ == '__main__':
     app.run(debug=True)
