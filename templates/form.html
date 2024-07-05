@@ -1,14 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Form</title>
+    <title>Form Automation</title>
 </head>
 <body>
+    <h1>Form Automation</h1>
     <form action="/submit" method="post">
-        <label for="nome">Nome/Procurador Legal:</label>
-        <input type="text" id="nome" name="nome"><br>
+        <h2>1 - Identificação da Unidade Consumidora - UC</h2>
+        Titular da UC: <input type="text" name="titular"><br>
+        Rua/Av.: <input type="text" name="rua">
+        No.: <input type="text" name="numero">
+        CEP: <input type="text" name="cep"><br>
+        Bairro: <input type="text" name="bairro">
+        Cidade: <input type="text" name="cidade"><br>
+        E-mail: <input type="email" name="email">
+        Telefone: <input type="text" name="telefone">
+        Celular: <input type="text" name="celular"><br>
+        CNPJ/CPF: <input type="text" name="cnpj_cpf"><br>
+        
         <!-- Add other fields similarly -->
-        <input type="submit" value="Submit">
+        
+        <input type="submit" value="Generate PDF">
     </form>
 </body>
 </html>
